@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Header() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -24,12 +25,16 @@ export default function Header() {
         <nav>
           {isAuthenticated ? (
             <button onClick={handleLogout} className="bg-red-500 p-2 rounded">
-              Logout
+              Logout 
             </button>
           ) : (
             <>
-              <a href="/login" className="mr-4">Login</a>
-              <a href="/register">Register</a>
+               <Link href="/login">
+            <a className="text-white hover:underline">Login</a>
+          </Link>
+          <Link href="/register">
+            <a className="text-white hover:underline">Register</a>
+          </Link>
             </>
           )}
         </nav>
