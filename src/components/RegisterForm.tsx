@@ -10,6 +10,7 @@ interface RegisterValues {
   email: string;
   password: string;
 }
+
 export default function RegisterForm() {
   const router = useRouter();
 
