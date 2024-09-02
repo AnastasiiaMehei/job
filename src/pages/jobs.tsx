@@ -35,7 +35,7 @@ export default function JobsPage() {
       }
 
       const data = await response.json();
-      setRecommendedJobs(data.data); // Assuming the API returns an array of jobs in `data.data`
+      setRecommendedJobs(data.data);
     } catch (error) {
       console.error("Error fetching recommended jobs:", error);
     }
@@ -53,10 +53,8 @@ export default function JobsPage() {
       <div className="p-8">
         <h1 className="text-3xl font-bold text-center text-white">Jobs</h1>
 
-        {/* Форма пошуку вакансій */}
         <JobSearchForm onLike={handleLike} />
 
-        {/* Відображення рекомендацій, якщо профіль існує */}
         {profile && (
           <div className="mt-8">
             <h2 className="text-2xl font-bold text-white">Recommended Jobs</h2>

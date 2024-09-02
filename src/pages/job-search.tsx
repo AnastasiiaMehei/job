@@ -13,12 +13,10 @@ export default function JobSearchPage() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Додаємо навігаційну панель */}
       <NavBar />
       
       <div className="p-8">
         <h1 className="text-3xl font-bold text-center">Job Search</h1>
-        {/* Передаємо функцію onLike як пропс до JobSearchForm */}
         <JobSearchForm onLike={handleLike} />
       </div>
     </div>
