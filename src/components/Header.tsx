@@ -19,27 +19,18 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-gray-800 text-white p-4">
+    <header className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold">Job Search</h1>
-        <nav>
-          {isAuthenticated ? (
-            <button onClick={handleLogout} className="bg-red-500 p-2 rounded">
-              Logout 
-            </button>
-          ) : (
-            <>
-               <Link href="/login">
-            <a className="text-white hover:underline">Login</a>
+        <h1 className="text-white text-2xl">Job Finder</h1>
+        <nav className="space-x-4">
+          <Link href="/login" className="text-white hover:underline">
+            Login
           </Link>
-          <Link href="/register">
-            <a className="text-white hover:underline">Register</a>
+          <Link href="/register" className="text-white hover:underline">
+            Register
           </Link>
-            </>
-          )}
         </nav>
       </div>
-      
     </header>
   );
 }

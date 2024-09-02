@@ -19,3 +19,6 @@ globals.css          // Глобальні стилі для всього дод
 2. React.
 3. Tailwind CSS.
 4. localStorage.
+5. Formik
+
+https://job-m4m5.vercel.app/

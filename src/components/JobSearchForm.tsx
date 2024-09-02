@@ -45,12 +45,10 @@ export default function JobSearchForm({ onLike }: JobSearchFormProps) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Enter job title..."
-          className="flex-grow p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+          className="border border-gray-300 p-2 w-full rounded"        />
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
+          className="bg-blue-500 text-white p-2 rounded w-full"        >
           Search
         </button>
       </form>
