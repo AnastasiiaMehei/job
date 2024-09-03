@@ -48,16 +48,16 @@ export default function JobsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-red-500 to-gray-500">
+    <div className="min-h-screen bg-gray-100">
       <NavBar />
       <div className="p-8">
-        <h1 className="text-3xl font-bold text-center text-white">Jobs</h1>
+        <h1 className="text-3xl font-bold text-center text-blue">Jobs</h1>
 
         <JobSearchForm onLike={handleLike} />
 
         {profile && (
           <div className="mt-8">
-            <h2 className="text-2xl font-bold text-white">Recommended Jobs</h2>
+            <h2 className="text-2xl font-bold text-blue">Recommended Jobs</h2>
             <div className="grid grid-cols-1 gap-4 mt-4">
               {recommendedJobs.map((job) => (
                 <JobCard key={job.job_id} job={job} onLike={handleLike} />

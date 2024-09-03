@@ -60,7 +60,11 @@ export default function JobDetails() {
   }, [id]);
 
   if (!job) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-red-500 text-2xl font-bold">Loading...</p>
+      </div>
+    );
   }
 
   const handleApply = () => {
