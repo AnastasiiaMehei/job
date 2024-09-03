@@ -7,7 +7,6 @@ interface JobDetailsProps {
   employer_name: string;
   job_title: string;
   job_description: string;
-  employer_logo: string;
   job_benefits: string[];
   job_apply_link: string;
   job_employment_type: string;
@@ -71,17 +70,7 @@ export default function JobDetails() {
 
   return (
     <div className="max-w-2xl mx-auto mt-8 p-4 border border-gray-300 rounded-lg shadow-sm bg-white">
-      {job.employer_logo && (
-        <div className="relative w-full h-64">
-          <Image
-            src={job.employer_logo}
-            alt={job.employer_name}
-            layout="fill"
-            objectFit="contain"
-            className="rounded-lg"
-          />
-        </div>
-      )}
+      
       <h1 className="text-3xl font-bold mt-4">{job.job_title}</h1>
       <p className="text-gray-600 mt-2">Employer: {job.employer_name}</p>
       <p className="mt-4 text-gray-700">{job.job_description}</p>
