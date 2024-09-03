@@ -1,4 +1,5 @@
 "use client";
+import "../styles/globals.css";
 
 import { useState, useEffect } from "react";
 import JobCard from "./JobCard";

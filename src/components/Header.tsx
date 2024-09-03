@@ -1,7 +1,10 @@
+"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import "../styles/globals.css";
+
 
 export default function Header() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

@@ -5,6 +5,7 @@ import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import Link from "next/link";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { useRouter } from "next/router";
+import "../styles/globals.css";
 
 interface RegisterValues {
   email: string;
