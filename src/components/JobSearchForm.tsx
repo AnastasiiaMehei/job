@@ -13,7 +13,11 @@ export default function JobSearchForm({ onLike }: JobSearchFormProps) {
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
+    console.log('Starting job search');
+    console.log('API Host:', process.env.NEXT_PUBLIC_RAPIDAPI_HOST);
+    console.log('Query:', query);
+  
     try {
       const response = await fetch(
         `https://${process.env.NEXT_PUBLIC_RAPIDAPI_HOST}/search?query=${query}&num_pages=1`,
@@ -25,17 +29,22 @@ export default function JobSearchForm({ onLike }: JobSearchFormProps) {
           },
         }
       );
-
+  
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+  
       if (!response.ok) {
         throw new Error("Failed to fetch jobs");
       }
-
+  
       const data = await response.json();
+      console.log('Received job data:', data);
       setJobs(data.data); // Assuming the API returns an array of jobs in `data.data`
     } catch (error) {
       console.error("Error fetching jobs:", error);
     }
   };
+  
 
   return (
     <div className="max-w-2xl mx-auto mt-8">
