@@ -1,5 +1,4 @@
-"use client";
-
+// components/JobCard.tsx
 import Link from "next/link";
 import { useState } from "react";
 
@@ -8,15 +7,15 @@ interface JobCardProps {
     job_id: string;
     job_title: string;
   };
-  onLike: (job: any) => void;
+  onLike: (jobId: string) => void;
 }
 
 export default function JobCard({ job, onLike }: JobCardProps) {
-  const [liked, setLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
 
-  const handleLike = () => {
-    setLiked(!liked);
-    onLike(job);
+  const handleToggleLike = () => {
+    setIsLiked(!isLiked);
+    onLike(job.job_id);
   };
 
   return (
@@ -27,10 +26,11 @@ export default function JobCard({ job, onLike }: JobCardProps) {
           Details
         </Link>
         <button
-          onClick={handleLike}
-          className={`px-4 py-2 rounded-lg ${liked ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700"}`}
+          onClick={handleToggleLike}
+          className={`px-4 py-2 rounded-lg ${isLiked ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700"} focus:outline-none`}
+          aria-label={isLiked ? "Unlike this job" : "Like this job"}
         >
-          {liked ? "Unlike" : "Like"}
+          {isLiked ? "Unlike" : "Like"}
         </button>
       </div>
     </div>
