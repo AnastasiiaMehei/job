@@ -3,12 +3,10 @@ import Link from "next/link";
 import { useState } from "react";
 import "../styles/globals.css";
 
-
 interface JobCardProps {
   job: {
     job_id: string;
-    job_title: string;
-  };
+    job_title: string};
   onLike: (jobId: string) => void;
 }
 
@@ -22,7 +20,7 @@ export default function JobCard({ job, onLike }: JobCardProps) {
 
   return (
     <div className="p-4 border border-gray-300 rounded-lg shadow-sm bg-white">
-      <h3 className="text-xl font-bold mt-4">{job.job_title}</h3>
+   <h3 className="text-xl font-bold mt-4">{job.job_title}</h3>
       <div className="mt-4 flex justify-between items-center">
         <Link href={`/job-details/${job.job_id}`} className="text-blue-500 hover:underline">
           Details

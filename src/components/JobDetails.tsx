@@ -1,13 +1,15 @@
 // components/JobDetails.tsx
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 import "../styles/globals.css";
 
 
 interface JobDetailsProps {
   employer_name: string;
   job_title: string;
-  job_description: string;
+  employer_logo: string;
+    // job_description: string;
   job_benefits: string[];
   job_apply_link: string;
   job_employment_type: string;
@@ -73,8 +75,17 @@ export default function JobDetails() {
     <div className="max-w-2xl mx-auto mt-8 p-4 border border-gray-300 rounded-lg shadow-sm bg-white">
       
       <h1 className="text-3xl font-bold mt-4">{job.job_title}</h1>
+      {job.employer_logo && (
+          <Image
+            src={job.employer_logo}
+            alt={job.employer_name}
+            width={96}
+            height={96}
+            className="rounded-full mr-4 md:mr-8 mb-4 md:mb-0"
+          />
+        )}
       <p className="text-gray-600 mt-2">Employer: {job.employer_name}</p>
-      <p className="mt-4 text-gray-700">{job.job_description}</p>
+      {/* <p className="mt-4 text-gray-700">{job.job_description}</p> */}
 
       <div className="mt-8">
         <h2 className="text-2xl font-bold">Job Details:</h2>
