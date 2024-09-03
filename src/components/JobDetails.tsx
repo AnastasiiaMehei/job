@@ -7,7 +7,6 @@ interface JobDetailsProps {
   employer_name: string;
   job_title: string;
   job_description: string;
-  job_location: string;
   employer_logo: string;
   job_benefits: string[];
   job_apply_link: string;
@@ -85,7 +84,6 @@ export default function JobDetails() {
       )}
       <h1 className="text-3xl font-bold mt-4">{job.job_title}</h1>
       <p className="text-gray-600 mt-2">Employer: {job.employer_name}</p>
-      <p className="text-gray-500 mt-2">Location: {job.job_location}</p>
       <p className="mt-4 text-gray-700">{job.job_description}</p>
 
       <div className="mt-8">
